@@ -60,20 +60,26 @@ export default function Faq() {
       <section className="section">
         <div className="wrap faq-wrap">
           {FAQS.map((f, i) => (
-            <div className={"faq-item reveal" + (open === i ? " open" : "")} key={i}>
-              <button
-                className="faq-q"
-                onClick={() => setOpen(open === i ? -1 : i)}
-                aria-expanded={open === i}
-              >
-                <span>{f.q}</span>
-                <span className="chev">
-                  <Icon name="chevron-right" size={17} />
-                </span>
-              </button>
-              <div className="faq-a">
-                <div>
-                  <p>{f.a}</p>
+            // The `reveal` class lives on this STABLE wrapper. The scroll-reveal
+            // adds `.in` to it imperatively; if `reveal` shared the element that
+            // toggles `open`, React would rebuild className on click and strip
+            // `.in`, snapping the item back to opacity:0 (it would "disappear").
+            <div className="reveal" key={i}>
+              <div className={"faq-item" + (open === i ? " open" : "")}>
+                <button
+                  className="faq-q"
+                  onClick={() => setOpen(open === i ? -1 : i)}
+                  aria-expanded={open === i}
+                >
+                  <span>{f.q}</span>
+                  <span className="chev">
+                    <Icon name="chevron-right" size={17} />
+                  </span>
+                </button>
+                <div className="faq-a">
+                  <div>
+                    <p>{f.a}</p>
+                  </div>
                 </div>
               </div>
             </div>
