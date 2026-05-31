@@ -1,0 +1,5 @@
+/* Load order mirrors the original design handoff: tokens → app → pages → theme. */
+@import "./tokens.css";
+@import "./app.css";
+@import "./pages.css";
+@import "./theme.css";

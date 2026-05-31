@@ -1,0 +1,79 @@
+/* =====================================================================
+   theme.css — OBSIDIAN (dark) theme, loaded on every page.
+   Activated by <html data-theme="obsidian">. Default (light) is untouched.
+   Grounded in the design-system navy/obsidian language; accent still driven
+   by [data-accent] so theme + accent compose.
+   ===================================================================== */
+html[data-theme="obsidian"]{
+  --white:    #0A0A0B;   /* page background (obsidian) */
+  --grey-50:  #15181D;
+  --grey-100: #101319;   /* alternating section surface */
+  --grey-150: #1B1E25;
+  --grey-200: #262A32;   /* hairline borders */
+  --grey-300: #353A44;   /* stronger borders */
+  --grey-400: #6A6F7A;
+  --grey-500: #8A909B;
+  --grey-600: #AEB3BD;
+  --grey-700: #C9CDD5;
+
+  --fg1: #F4F6F9;        /* headings */
+  --fg2: #B2B7C1;        /* body */
+  --fg3: #868C96;        /* secondary */
+  --fg4: #5E636E;        /* muted */
+
+  --brand-red-tint:   color-mix(in srgb, var(--brand-red) 17%, #0A0A0B);
+  --brand-red-tint-2: color-mix(in srgb, var(--brand-red) 36%, #0A0A0B);
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.5);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.55), 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 10px 28px rgba(0,0,0,.55), 0 2px 6px rgba(0,0,0,.4);
+  --shadow-lg: 0 26px 60px rgba(0,0,0,.6), 0 6px 14px rgba(0,0,0,.45);
+}
+
+/* obsidian page depth — single faint accent glow up top */
+html[data-theme="obsidian"] body{
+  background:var(--white);
+  background-image:radial-gradient(1100px 600px at 80% -14%,
+    color-mix(in srgb, var(--brand-red) 9%, transparent), transparent 62%);
+  background-repeat:no-repeat;
+}
+
+/* --- surfaces that were hardcoded white in app.css --- */
+html[data-theme="obsidian"] .nav{background:rgba(10,10,11,.74)}
+html[data-theme="obsidian"] .nav.scrolled{box-shadow:0 1px 0 rgba(255,255,255,.04),var(--shadow-sm)}
+html[data-theme="obsidian"] .nav-mobile{background:var(--white)}
+html[data-theme="obsidian"] .pcard,
+html[data-theme="obsidian"] .soc,
+html[data-theme="obsidian"] .con-panel,
+html[data-theme="obsidian"] .ctab:hover,
+html[data-theme="obsidian"] .ctab.active,
+html[data-theme="obsidian"] .authority .cert{background:#101319;border-color:var(--grey-200)}
+html[data-theme="obsidian"] .soc-top,
+html[data-theme="obsidian"] .soc-foot{background:#0C0E12}
+html[data-theme="obsidian"] .modal{background:#13161C}
+html[data-theme="obsidian"] .modal-hd .x{background:#1B1E25;color:var(--fg3)}
+html[data-theme="obsidian"] .modal-hd .x:hover{background:#262A32}
+html[data-theme="obsidian"] .fieldset input,
+html[data-theme="obsidian"] .sso-btns button{background:#0C0E12;border-color:var(--grey-300);color:var(--fg1)}
+html[data-theme="obsidian"] .sso-btns button:hover{background:#15181D;border-color:var(--grey-400)}
+html[data-theme="obsidian"] .bp:hover,
+html[data-theme="obsidian"] .mrow:hover{background:#101319}
+html[data-theme="obsidian"] .bp .bp-ix,
+html[data-theme="obsidian"] .mrow .m-ix{color:#2C313A}
+html[data-theme="obsidian"] .btn-ghost{color:var(--fg1);border-color:var(--grey-300)}
+html[data-theme="obsidian"] .btn-ghost:hover{background:var(--grey-50);border-color:var(--grey-400)}
+
+/* page chrome (pages.css surfaces) */
+html[data-theme="obsidian"] .pagehero{border-bottom-color:var(--grey-200)}
+html[data-theme="obsidian"] .infocard,
+html[data-theme="obsidian"] .faq-item,
+html[data-theme="obsidian"] .svc-block,
+html[data-theme="obsidian"] .contact-card,
+html[data-theme="obsidian"] .value-card,
+html[data-theme="obsidian"] .timeline,
+html[data-theme="obsidian"] .login-card{background:#101319;border-color:var(--grey-200)}
+html[data-theme="obsidian"] .login-aside{background:#0C0E12;border-color:var(--grey-200)}
+html[data-theme="obsidian"] .portal-page{
+  background:radial-gradient(900px 600px at 78% -10%, color-mix(in srgb, var(--brand-red) 12%, transparent), transparent 60%), #08090B;
+}
+html[data-theme="obsidian"] .faq-q:hover{background:#0C0E12}

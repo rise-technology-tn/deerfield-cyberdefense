@@ -1,0 +1,8 @@
+# Deerfield Cyberdefense — vulnerability disclosure
+# https://securitytxt.org/
+Contact: mailto:security@deerfield-cs.com
+Preferred-Languages: en
+Canonical: https://www.deerfield-cs.com/.well-known/security.txt
+Policy: https://www.deerfield-cs.com/security-policy
+# Expires must be updated periodically (RFC 9116).
+Expires: 2027-05-31T00:00:00.000Z
